@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple WebP to PNG Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Simple WebP to PNG Converter</h1>
+        <p class="description">ブラウザだけで完結する、安全でシンプルな画像変換ツール。WebP画像をPNG形式に一括変換します。</p>
+        
+        <div id="upload-area">
+            <div id="drop-area">
+                <p>ここにWebPファイルをドラッグ＆ドロップ(複数可)</p>
+                <p>または</p>
+                <input type="file" id="file-input" accept="image/webp" multiple>
+                <label for="file-input" class="button">ファイルを選択</label>
+            </div>
+            <div id="file-list"></div>
+            <button id="convert-button" class="button" disabled>変換実行</button>
+        </div>
+
+        <div id="results-header" style="display: none;">
+            <h2>変換結果</h2>
+            <div>
+                <button id="clear-button" class="button secondary">クリア</button>
+                <button id="download-all-button" class="button">すべてをZIPでダウンロード</button>
+            </div>
+        </div>
+        <div id="results-container"></div>
+    </div>
+
+    <footer>
+        <p>このサイトは、画像の変換処理をすべてお使いのブラウザ内で行います。<br>画像データがサーバーにアップロードされることは一切ありません。</p>
+        <p>&copy; 2025 <a href="https://x.com/Vapour_Aeon" target="_blank" rel="noopener noreferrer">Vapour Aeon</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

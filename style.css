@@ -1,0 +1,196 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* 縦並びに変更 */
+    align-items: center;   /* 水平方向の中央揃え */
+    justify-content: flex-start; /* 上から配置 */
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 0; /* 上下に余白を追加 */
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 85%;
+    max-width: 1200px;
+    min-width: 480px; /* 2列表示を維持するための最小幅 */
+}
+
+h1 {
+    margin-top: 0;
+    color: #1c1e21;
+}
+
+.description {
+    font-size: 0.85rem;
+    color: #4b5563;
+    margin: -0.5rem auto 1.5rem;
+}
+
+#drop-area {
+    border: 2px dashed #ccd0d5;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+#drop-area.drag-over {
+    background-color: #e9f5ff;
+    border-color: #1877f2;
+}
+
+#file-list {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+#convert-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1.1rem;
+    margin-top: 1rem; /* ボタンの上のマージンを調整 */
+}
+
+#file-input {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    background-color: #1877f2;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+    margin: 0.5rem;
+}
+
+.button:hover {
+    background-color: #166fe5;
+}
+
+.button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.button.secondary {
+    background-color: #6c757d;
+}
+.button.secondary:hover {
+    background-color: #5a6268;
+}
+
+#results-header {
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#results-header h2 {
+    margin: 0;
+}
+
+#results-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px); /* カード幅を220pxに固定 */
+    gap: 1.5rem;
+}
+
+.result-item {
+    position: relative; /* 削除ボタンの配置基準にする */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 220px; /* 高さを固定 */
+}
+
+.delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: center;
+    padding: 0;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.result-item .file-name {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    word-break: break-all;
+}
+
+.result-image-container {
+    flex-grow: 1; /* コンテナを拡張して利用可能なスペースを埋める */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.result-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* アスペクト比を維持してフィットさせる */
+    border-radius: 4px;
+}
+
+.result-item .button {
+    margin-top: auto;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
